@@ -1,0 +1,7 @@
+---
+height-limit: 250
+show-message: true
+show-prefix: true
+message: "&cYou can't build over the height of {LIMIT} blocks!"
+disabled-in-worlds: []
+...
