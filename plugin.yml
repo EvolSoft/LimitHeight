@@ -9,8 +9,8 @@ website: http://www.evolsoft.tk
 
 permissions:
  limitheight:
-  default: false
-  description: Limitheight permissions.
+  default: op
+  description: LimitHeight permissions.
   children:
     limitheight.bypass:
       default: op
