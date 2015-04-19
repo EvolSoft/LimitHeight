@@ -89,6 +89,8 @@ class Main extends PluginBase implements Listener {
      * Check if the height limit is disabled in the specified world
      * 
      * @param string $level Level name
+     * 
+     * @return boolean
      */
     public function isLimitDisabled($level){
     	$level = strtolower($level);
