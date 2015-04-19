@@ -4,7 +4,7 @@
  * LimitHeight (v1.0) by EvolSoft
  * Developer: EvolSoft (Flavius12)
  * Website: http://www.evolsoft.tk
- * Date: 18/04/2015 02:55 PM (UTC)
+ * Date: 19/04/2015 02:23 PM (UTC)
  * Copyright & License: (C) 2015 EvolSoft
  * Licensed under MIT (https://github.com/EvolSoft/LimitHeight/blob/master/LICENSE)
  */
@@ -85,6 +85,11 @@ class Main extends PluginBase implements Listener {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
     
+    /**
+     * Check if the height limit is disabled in the specified world
+     * 
+     * @param string $level Level name
+     */
     public function isLimitDisabled($level){
     	$level = strtolower($level);
     	$cfg = $this->getConfig()->getAll();
