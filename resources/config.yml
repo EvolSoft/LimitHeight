@@ -1,5 +1,5 @@
 ---
-height-limit: 250
+height-limit: 64
 show-message: true
 show-prefix: true
 message: "&cYou can't build over the height of {LIMIT} blocks!"
