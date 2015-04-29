@@ -29,7 +29,7 @@ Configuration (config.yml):
 ```yaml
 ---
 #Height limit (by default ops have limitheight.bypass permission set and they can bypass the limit. If you want to limit the build height also for ops, simply use a permission manager plugin)
-height-limit: 250
+height-limit: 64
 #Show message on limit reached
 show-message: true
 #Show plugin prefix on message
