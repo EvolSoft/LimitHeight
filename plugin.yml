@@ -1,17 +1,17 @@
 name: LimitHeight
-main: LimitHeight\Main
-version: "1.1"
-api: [1.11.0]
+main: LimitHeight\LimitHeight
+version: 1.2
+api: [3.0.0-ALPHA7, 3.0.0-ALPHA8, 3.0.0-ALPHA9]
 load: STARTUP
 author: EvolSoft
-description: Limit the build height
-website: http://www.evolsoft.tk
+description: Limit the build height on your server.
+website: https://www.evolsoft.tk
 
 permissions:
  limitheight:
   default: op
-  description: LimitHeight permissions.
+  description: LimitHeight permissions tree.
   children:
     limitheight.bypass:
       default: op
-      description: Allows players to bypass the height limit
+      description: Let players bypass the height limit.

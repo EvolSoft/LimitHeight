@@ -1,7 +1,16 @@
 ---
+#Height limit (by default ops have limitheight.bypass permission set and they can bypass the limit)
 height-limit: 64
+#Show message on limit reached
 show-message: true
+#Show plugin prefix on message
 show-prefix: true
+#Message
 message: "&cYou can't build over the height of {LIMIT} blocks!"
+#World list where limit is disabled
+#For example:
+#disabled-in-worlds:
+# - world
+# - world2
 disabled-in-worlds: []
 ...
