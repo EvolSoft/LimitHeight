@@ -1,10 +1,10 @@
 <?php
 
 /*
- * LimitHeight (v1.2) by EvolSoft
+ * LimitHeight (v1.3) by EvolSoft
  * Developer: EvolSoft (Flavius12)
  * Website: https://www.evolsoft.tk
- * Date: 05/01/2018 11:27 AM (UTC)
+ * Date: 22/02/2018 07:19 PM (UTC)
  * Copyright & License: (C) 2015-2018 EvolSoft
  * Licensed under MIT (https://github.com/EvolSoft/LimitHeight/blob/master/LICENSE)
  */
@@ -14,7 +14,6 @@ namespace LimitHeight;
 use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
-use pocketmine\Server;
 use pocketmine\utils\TextFormat;
 
 class LimitHeight extends PluginBase implements Listener {
@@ -24,12 +23,13 @@ class LimitHeight extends PluginBase implements Listener {
     
     /**
      * Translate Minecraft colors
+     *
      * @param string $symbol
      * @param string $message
+     *
      * @return string
      */
     public function translateColors($symbol, $message){
-        
         $message = str_replace($symbol . "0", TextFormat::BLACK, $message);
         $message = str_replace($symbol . "1", TextFormat::DARK_BLUE, $message);
         $message = str_replace($symbol . "2", TextFormat::DARK_GREEN, $message);
@@ -53,22 +53,22 @@ class LimitHeight extends PluginBase implements Listener {
         $message = str_replace($symbol . "n", TextFormat::UNDERLINE, $message);
         $message = str_replace($symbol . "o", TextFormat::ITALIC, $message);
         $message = str_replace($symbol . "r", TextFormat::RESET, $message);
-        
         return $message;
     }
     
     public function onEnable(){
         @mkdir($this->getDataFolder());
         $this->saveDefaultConfig();
-        $logger = Server::getInstance()->getLogger();
-        $logger->info($this->translateColors("&", self::PREFIX . "&9LimitHeight &bv" . $this->getDescription()->getVersion() . "&9 developed by &bEvolSoft"));
-        $logger->info($this->translateColors("&", self::PREFIX . "&9Website &b" . $this->getDescription()->getWebsite()));
+        $this->getServer()->getLogger()->info($this->translateColors("&", self::PREFIX . "&9LimitHeight &bv" . $this->getDescription()->getVersion() . "&9 developed by &bEvolSoft"));
+        $this->getServer()->getLogger()->info($this->translateColors("&", self::PREFIX . "&9Website &b" . $this->getDescription()->getWebsite()));
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
     
     /**
      * Check if the height limit is disabled on the specified world
+     * 
      * @param string
+     * 
      * @return bool
      */
     private function isLimitDisabled($level) : bool {
