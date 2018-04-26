@@ -1,7 +1,7 @@
 <?php
 
 /*
- * LimitHeight (v1.3) by EvolSoft
+ * LimitHeight (v1.4) by EvolSoft
  * Developer: EvolSoft (Flavius12)
  * Website: https://www.evolsoft.tk
  * Date: 22/02/2018 07:19 PM (UTC)
