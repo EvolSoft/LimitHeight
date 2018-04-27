@@ -1,10 +1,10 @@
 <?php
 
 /*
- * LimitHeight (v1.4) by EvolSoft
+ * LimitHeight (v1.5) by EvolSoft
  * Developer: EvolSoft (Flavius12)
  * Website: https://www.evolsoft.tk
- * Date: 22/02/2018 07:19 PM (UTC)
+ * Date: 27/04/2018 01:52 PM (UTC)
  * Copyright & License: (C) 2015-2018 EvolSoft
  * Licensed under MIT (https://github.com/EvolSoft/LimitHeight/blob/master/LICENSE)
  */
@@ -59,8 +59,6 @@ class LimitHeight extends PluginBase implements Listener {
     public function onEnable(){
         @mkdir($this->getDataFolder());
         $this->saveDefaultConfig();
-        $this->getServer()->getLogger()->info($this->translateColors("&", self::PREFIX . "&9LimitHeight &bv" . $this->getDescription()->getVersion() . "&9 developed by &bEvolSoft"));
-        $this->getServer()->getLogger()->info($this->translateColors("&", self::PREFIX . "&9Website &b" . $this->getDescription()->getWebsite()));
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
     
