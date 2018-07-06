@@ -1,11 +1,10 @@
 <?php
 
 /*
- * LimitHeight (v1.5) by EvolSoft
- * Developer: EvolSoft (Flavius12)
+ * LimitHeight v1.6 by EvolSoft
+ * Developer: Flavius12
  * Website: https://www.evolsoft.tk
- * Date: 27/04/2018 01:52 PM (UTC)
- * Copyright & License: (C) 2015-2018 EvolSoft
+ * Copyright (C) 2015-2018 EvolSoft
  * Licensed under MIT (https://github.com/EvolSoft/LimitHeight/blob/master/LICENSE)
  */
 
@@ -20,41 +19,6 @@ class LimitHeight extends PluginBase implements Listener {
     
     /** @var string */
     const PREFIX = "&3[LimitHeight] ";
-    
-    /**
-     * Translate Minecraft colors
-     *
-     * @param string $symbol
-     * @param string $message
-     *
-     * @return string
-     */
-    public function translateColors($symbol, $message){
-        $message = str_replace($symbol . "0", TextFormat::BLACK, $message);
-        $message = str_replace($symbol . "1", TextFormat::DARK_BLUE, $message);
-        $message = str_replace($symbol . "2", TextFormat::DARK_GREEN, $message);
-        $message = str_replace($symbol . "3", TextFormat::DARK_AQUA, $message);
-        $message = str_replace($symbol . "4", TextFormat::DARK_RED, $message);
-        $message = str_replace($symbol . "5", TextFormat::DARK_PURPLE, $message);
-        $message = str_replace($symbol . "6", TextFormat::GOLD, $message);
-        $message = str_replace($symbol . "7", TextFormat::GRAY, $message);
-        $message = str_replace($symbol . "8", TextFormat::DARK_GRAY, $message);
-        $message = str_replace($symbol . "9", TextFormat::BLUE, $message);
-        $message = str_replace($symbol . "a", TextFormat::GREEN, $message);
-        $message = str_replace($symbol . "b", TextFormat::AQUA, $message);
-        $message = str_replace($symbol . "c", TextFormat::RED, $message);
-        $message = str_replace($symbol . "d", TextFormat::LIGHT_PURPLE, $message);
-        $message = str_replace($symbol . "e", TextFormat::YELLOW, $message);
-        $message = str_replace($symbol . "f", TextFormat::WHITE, $message);
-        
-        $message = str_replace($symbol . "k", TextFormat::OBFUSCATED, $message);
-        $message = str_replace($symbol . "l", TextFormat::BOLD, $message);
-        $message = str_replace($symbol . "m", TextFormat::STRIKETHROUGH, $message);
-        $message = str_replace($symbol . "n", TextFormat::UNDERLINE, $message);
-        $message = str_replace($symbol . "o", TextFormat::ITALIC, $message);
-        $message = str_replace($symbol . "r", TextFormat::RESET, $message);
-        return $message;
-    }
     
     public function onEnable(){
         @mkdir($this->getDataFolder());
@@ -94,7 +58,7 @@ class LimitHeight extends PluginBase implements Listener {
                     if($cfg["show-prefix"]){
                         $message = self::PREFIX . $message;
                     }
-                    $player->sendMessage($this->translateColors("&", $message));
+                    $player->sendMessage(TextFormat::colorize($message));
                 }
                 $event->setCancelled(true);
             }
